@@ -60,4 +60,31 @@ main {
 }
 h2, h3 {
     margin: 0px;
+} /* portfolio styles */
+.content h1 {
+    color: lime;
 }
+
+
+#portfolio {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+
+#portfolio li {
+    background: #780adf17;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+
+#portfolio li:hover {
+    background: #c813e0;
+}
+
+
+#portfolio a {
+    text-decoration: none;
+    color: lime;
