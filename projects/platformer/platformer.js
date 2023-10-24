@@ -41,11 +41,21 @@ $(function () {
 
     createPlatform(300, 650, 200, 300)
     createPlatform(450, 600, 300, 500)
-    createPlatform(800, 550, 200, 55)
-    createPlatform(1000, 500, 80, 20)
-    createPlatform(765, 400, 65, 20)
-    createPlatform(1080, 50, 400, 900)
-    createPlatform(1000, 260, 80, 20)
+    createPlatform(765, 500, 250, 500)
+    createPlatform(1250, 450, 80, 20)
+    createPlatform(950, 350, 65, 20)
+    createPlatform(1300, 1, 400, 900)
+    createPlatform(1250, 270, 80, 20)
+    createPlatform(1100, 620, 100, 400)
+    createPlatform(290, 200, 700, 25)
+
+    createCollectable("database", 1250, 700, 00)
+    createCollectable("database", 1250, 30, 00)
+    createCollectable("database", 735, 580, 00)
+    
+    createCannon("top", 300, 800, 50);
+    createCannon("bottom", 700, 560, 50);
+    createCannon("right", 450, 3000, 300);
     /////////////////////////////////////////////////
     //////////ONLY CHANGE ABOVE THIS POINT///////////
     /////////////////////////////////////////////////
