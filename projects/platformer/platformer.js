@@ -28,12 +28,12 @@ $(function () {
      * Comment the lines out to remove the grid
      */
 
-    // for (let i = 100; i < canvas.width; i += 100) {
-    //   createPlatform(i, canvas.height, -1, -canvas.height);
-    // }
-    // for (let i = 100; i < canvas.height; i += 100) {
-    //   createPlatform(canvas.width, i, -canvas.width, -1);
-    // }
+    for (let i = 100; i < canvas.width; i += 100) {
+      createPlatform(i, canvas.height, -1, -canvas.height);
+     }
+     for (let i = 100; i < canvas.height; i += 100) {
+       createPlatform(canvas.width, i, -canvas.width, -1);
+     }
 
     /////////////////////////////////////////////////
     //////////ONLY CHANGE BELOW THIS POINT///////////
@@ -44,18 +44,23 @@ $(function () {
     createPlatform(765, 500, 250, 500)
     createPlatform(1250, 450, 80, 20)
     createPlatform(950, 350, 65, 20)
-    createPlatform(1300, 1, 400, 900)
+    createPlatform(1300, 100, 900, 900)
     createPlatform(1250, 270, 80, 20)
     createPlatform(1100, 620, 100, 400)
-    createPlatform(290, 200, 700, 25)
+    createPlatform(1, 200, 950, 25)
+    createPlatform(1000, 700, 100, 0)
 
-    createCollectable("database", 1250, 700, 00)
-    createCollectable("database", 1250, 30, 00)
+
+    createCollectable("database", 1, 700, 00)
+    createCollectable("database", 1050, 680, 00)
+    createCollectable("database", 1270, 60, 00)
     createCollectable("database", 735, 580, 00)
     
-    createCannon("top", 300, 800, 50);
-    createCannon("bottom", 700, 560, 50);
-    createCannon("right", 450, 3000, 300);
+    createCannon("top", 300, 820, 50);
+    createCannon("bottom", 700, 2002, 50);
+    createCannon("right", 450, 3100, 200);
+    createCannon("left", 332, 3100, 200);
+    createCannon("bottom", 1000, 2000, 1);
     /////////////////////////////////////////////////
     //////////ONLY CHANGE ABOVE THIS POINT///////////
     /////////////////////////////////////////////////
