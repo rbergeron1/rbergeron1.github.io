@@ -52,9 +52,9 @@ $(function () {
 
 
     createCollectable("database", 1, 700, 00)
-    createCollectable("database", 1050, 680, 00)
-    createCollectable("database", 1270, 60, 00)
-    createCollectable("database", 735, 580, 00)
+    createCollectable("diamond", 1050, 680, 00)
+    createCollectable("steve", 1270, 60, 00)
+    createCollectable("grace", 735, 580, 00)
     
     createCannon("top", 300, 820, 50);
     createCannon("bottom", 700, 2002, 50);
