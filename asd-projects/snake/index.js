@@ -11,7 +11,17 @@ var highScoreElement = $("#highScore");
 
 // TODO 4a: Create the snake, apple and score variables
 // Game Variables
+var snake = $("#snake");
+var apple = $("#apple");
+var score = $("#score") = 0;
 
+function makeApple() {
+apple.element = $("<div>").addclass("apple").appendTo(board);
+var randomPosition = getRandomAvailablePosition();
+apple.row = randomPosition.row;
+apple.column = randomPosition.column;
+repositionSquare(apple);
+}
 // Constant Variables
 var ROWS = 20;
 var COLUMNS = 20;
@@ -43,7 +53,7 @@ function init() {
   // TODO 4c-2: initialize the snake
 
   // TODO 4b-2: initialize the apple
-
+makeApple()
   // TODO 5a: Initialize the interval
 
 }
