@@ -6,12 +6,12 @@ body {
 #board {
   width: 440px;
   height: 440px;
-  border: 1px solid rgb(10, 233, 185);
-  background-color: rgb(179, 17, 143);
+  border: 1px solid rgb(233, 10, 222);
+  background-color: rgb(45, 150, 31);
 }
 
 #score, #highScore {
-  color: rgb(31, 153, 27);
+  color: rgb(23, 216, 17);
 }
 
 .snake, .apple {
@@ -23,15 +23,15 @@ body {
 }
 
 .snake {
-  background-color: rgb(95, 11, 121);
+  background-color: rgb(123, 17, 155);
   z-index: 2;
 }
 
 #snake-head {
-  background-color: rgb(197, 18, 167);
+  background-color: rgb(129, 12, 114);
 }
 
 .apple {
-  background-color: rgb(9, 255, 0);
+  background-color: rgb(255, 230, 0);
   z-index: 1;
 }
