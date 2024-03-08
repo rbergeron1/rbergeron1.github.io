@@ -55,7 +55,7 @@ snake.head = snake.body[0];
   
 makeApple();
 
-updateInterval = setInterval(update, 85);
+updateInterval = setInterval(update, 100);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -100,11 +100,13 @@ function checkForNewDirection(event) {
 function moveSnake() {
 
 for ( var i = snake.body.length - 1; i > 0; i--) {
-  var snakeSquare = "???";
-var nextSnakeSquare = "???";
-var nextRow = "???";
-var nextColumn = "???";
-var nextDirection = "???";
+
+var snakeSquare = snake.body[i];
+var nextSnakeSquare = snake.body[i - 1];
+
+var nextRow = nextSnakeSquare.row;
+var nextColumn = nextSnakeSquare.column;
+var nextDirection = nextSnakeSquare.direction;
 
 snakeSquare.direction = nextDirection;
   snakeSquare.row = nextRow;
@@ -135,36 +137,26 @@ snakeSquare.direction = nextDirection;
   repositionSquare(snake.head);
 
 
-  /* 
-  TODO 7: determine the next row and column for the snake's head
-  
-  HINT: The snake's head will need to move forward 1 square based on the value
-  of snake.head.direction which may be one of "left", "right", "up", or "down"
-  */
+
 }
 
 function hasHitWall() {
-  if(snake.head.row === -1 || 
+  if (snake.head.row === -1 || 
     snake.head.row === ROWS + 1 || 
     snake.head.column === -1 || 
-    snake.head.column ===COLUMNS + 1)
+    snake.head.column === COLUMNS + 1)
   {return true}
-  /* 
-  TODO 8: Should return true if the snake's head has collided with the four walls of the
-  board, false otherwise.
-  
-  HINT: What will the row and column of the snake's head be if this were the case?
-  */
 
   return false;
 }
 
 function hasCollidedWithApple() {
 
-  if (snake.head.row === apple.row && 
-    snake.head.column === apple.column)
-return true
-  //return false;
+  if (snake.head.row === apple.row && snake.head.column === apple.column)
+return true;
+  
+
+return false;
 }
 
 function handleAppleCollision() {
@@ -198,14 +190,19 @@ function handleAppleCollision() {
 }
 
 function hasCollidedWithSnake() {
-  /* 
-  TODO 12: Should return true if the snake's head has collided with any part of the
-  snake's body.
+
+  var headRow = snake.body[0].row;
+  var headColumn = snake.body[0].column;
   
-  HINT: Each part of the snake's body is stored in the snake.body Array. The
-  head and each part of the snake's body also knows its own row and column.
-  
-  */
+  for (var i = 1; i < snake.body.length; i++)
+  {
+    var tailRow = snake.body[i].row
+    var tailColumn = snake.body[i].column
+    if (headRow === tailRow && headColumn === tailColumn)
+    {return true}
+
+
+  }
 
   return false;
 }
@@ -301,22 +298,27 @@ function repositionSquare(square) {
 function getRandomAvailablePosition() {
   var spaceIsAvailable;
   var randomPosition = {};
-
-  /* Generate random positions until one is found that doesn't overlap with the snake */
+  
   while (!spaceIsAvailable) {
-    randomPosition.column = Math.floor(Math.random() * COLUMNS);
-    randomPosition.row = Math.floor(Math.random() * ROWS);
-    spaceIsAvailable = true;
-
-    /*
-    TODO 13: After generating the random position determine if that position is
-    not occupied by a snakeSquare in the snake's body. If it is then set 
-    spaceIsAvailable to false so that a new position is generated.
-    */
-  }
+      randomPosition.column = 
+    Math.floor(Math.random() * COLUMNS);
+      randomPosition.row = 
+    Math.floor(Math.random() * ROWS);
+      spaceIsAvailable = true;
+    for (let i = 0; i < snake.body.length; i++) {
+      if (randomPosition.column === 
+        snake.body[i].column && 
+        randomPosition.row === 
+        snake.body[i].row) {
+        spaceIsAvailable = false;
+        Break;
+      }
+    }
+    }
 
   return randomPosition;
-}
+
+  }
 
 function calculateHighScore() {
   // retrieve the high score from session storage if it exists, or set it to 0
@@ -325,7 +327,7 @@ function calculateHighScore() {
   if (score > highScore) {
     sessionStorage.setItem("highScore", score);
     highScore = score;
-    alert("New High Score!");
+    alert("Congratulation You Got A New High Score!");
   }
 
   return highScore;

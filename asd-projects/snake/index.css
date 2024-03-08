@@ -1,17 +1,17 @@
 
 body {
-  background-color: rgb(54, 14, 161);
+  background-color: rgb(81, 7, 129);
 }
 
 #board {
   width: 440px;
   height: 440px;
-  border: 1px solid rgb(10, 151, 233);
-  background-color: rgb(35, 255, 6);
+  border: 2.5px solid rgb(224, 47, 67);
+  background-color: rgb(7, 18, 173);
 }
 
 #score, #highScore {
-  color: rgb(247, 0, 255);
+  color: rgb(0, 255, 0);
 }
 
 .snake, .apple {
@@ -23,15 +23,15 @@ body {
 }
 
 .snake {
-  background-color: rgb(123, 17, 155);
+  background-color: rgb(172, 17, 159);
   z-index: 2;
 }
 
 #snake-head {
-  background-color: rgb(129, 12, 114);
+  background-color: rgb(223, 9, 152);
 }
 
 .apple {
-  background-color: rgb(243, 5, 5);
+  background-color: rgb(255, 251, 0);
   z-index: 1;
 }
