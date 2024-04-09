@@ -20,7 +20,7 @@ function resetAndRender() {
 // all of your apply functions
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
-
+applyFilter()
   
 
   // do not change the below line of code
@@ -32,7 +32,13 @@ function applyAndRender() {
 /////////////////////////////////////////////////////////
 
 // TODO 1, 2 & 4: Create the applyFilter function here
-
+function applyFilter(){
+  for (let row = 0; row < image.length; row++) {
+  for (let column = 0; column < image[row].length; column++) {
+  
+  }
+  }
+}
 
 // TODO 7: Create the applyFilterNoBackground function
 
