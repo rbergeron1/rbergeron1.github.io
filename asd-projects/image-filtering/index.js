@@ -21,7 +21,8 @@ function resetAndRender() {
 function applyAndRender() {
   // Multiple TODOs: Call your apply function(s) here
 applyFilter(Reddify)
-  
+applyFilter(decreaseBlue)
+applyFilter(increaseGreenByBlue)
 
   // do not change the below line of code
   render($("#display"), image);
@@ -51,7 +52,9 @@ function applyFilter(filterFunction){
 
 
 // TODO 5: Create the keepInBounds function
-
+function KeepInBounds(boundsNumber) {
+return Math.min(255, Math.max(0, boundsNumber))
+}
 
 // TODO 3: Create reddify function
 function Reddify(redArray) {
@@ -59,6 +62,12 @@ redArray[RED] = 200
 }
 
 // TODO 6: Create more filter functions
+function decreaseBlue(Blueify) {
+Blueify[BLUE] = KeepInBounds(Blueify[BLUE] - 50);
+}
 
+function increaseGreenByBlue(Greenify) {
+Greenify[GREEN] = KeepInBounds(Blueify[BLUE] + Greenify[GREEN])
+}
 
 // CHALLENGE code goes below here
